@@ -1,0 +1,29 @@
+services:
+  supportly_ai_frontend:
+    build: .
+    image: yedii/supportly-ai-frontend:latest
+    container_name: supportly_ai_frontend
+    restart: always
+    ports:
+      - "9005:9005"  # host:container
+    env_file: 
+      - .env.Development
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    develop:
+      watch:
+        - action: sync
+          path: ./app
+          target: /app/app
+        - action: sync
+          path: ./components
+          target: /app/components
+        - action: sync
+          path: ./public
+          target: /app/public
+        - action: rebuild
+          path: ./package.json
+
