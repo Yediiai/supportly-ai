@@ -40,3 +40,4 @@ Visit: `http://localhost:9005`
 - **Styling:** Tailwind CSS (Custom Obsidian & Electric Violet theme)
 - **Icons:** Lucide React
 - **Forms:** React Hook Form + Zod validation
+
